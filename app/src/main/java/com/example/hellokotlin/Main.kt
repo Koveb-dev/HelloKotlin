@@ -146,5 +146,50 @@ fun main() {
     }else if(numero < 0){
         println("El $numero es Negativo")
     }
+    // Listas
 
+
+    // <> --> este simbolo es para especificar el tipo de dato en este caso una lista  con Strings
+    var myList = listOf<String>("Dama","Alfil","Caballo")
+    println("\nMi lista: $myList") //se muestra nuestra lista
+    //2 ejemplo: var myList = listOf("Dama","Alfil","Caballo") --> si le quitaramos el tipado <String>, esto funcionaria de igual forma
+    //ya que kotlin sigue infiriendo el tipo de dato
+
+    //Ahora accederemos a un elemento de la lista myList en este caso al segundo elemento
+
+    println("\nSegundo elemento de la lista: ${myList[1]}")
+
+    //Ahora si queremos añadir elemento a la lista debemos hacer lo sgte:
+
+    //para que nuestra lista pueda permitir nuevos elementos debemos hacer que nuestra lista sea mutable
+
+    val miLista = mutableListOf("Torre","Peón","Rey Blanco") // mutableListOf esta funcionnos permite crear una lista mutable con elementos iniciales o vacía.
+    println("Mi segunda lista: $miLista")
+
+    miLista.add("Rey Negro")
+    println("Mi segunda lista con un elemento nuevo: $miLista") // el elemento añadido se fue al final de la lista
+
+    //el hecho la variable miLista sea val, esta variable es constante por lo tanto no puedo reasignarle o cambiar, ej: miLista = mutableListOf() Error! ya que es una constante
+    //no se puede reasignar
+
+
+
+
+    //Sets
+
+
+    // el set para empezar no es ordenado, es una estructura que es super agil,super rapida y optima pero no nos ordena los datos dentro de el
+    //set se utiliza para guardar datos que nos da igual el orden y esto hara que funcione más rapido pero sin saber donde estan estos datos
+    //tambien el set es para cuando no queremos dar soporte a datos repetitivos.
+
+
+    var mySet = setOf("Torre","Peón","Rey Blanco","Peón")
+    println(mySet) //aca se puede ver que no imprime el elemento final Peón ya que este se repite anteriormente dentro del set
+    //basicamente los sets no permiten duplicados
 }
+
+
+
+    //Mapas
+
+    val myMap = mutableMapOf()
