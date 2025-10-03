@@ -247,8 +247,88 @@ fun main() {
     println(tareasEjercicio)
 
 
-    //Mapas
+    //Mapas: es una estructura compleja, es una estructura no ordenada que nos permite guardar diferentes propiedades de tipo clave valor
+    // nosotros siempre a lo que vamos a guardar debemos guardarle una clave
+
+    //En este ejemplo vamos a guardar la edad asociada a los usuarios
+    val myMap = mutableMapOf("Brais" to 36,"César" to 24,"Zoro" to 22) //Se asociado una clave "Brais" a 36
+    myMap["Alexis"] = 37 // añadir a otro usuario, de esta forma se añade un nuevo usuario clave "Alexis" con su valor edad 37
+    println(myMap["Brais"]) // nos imprime 36, gracias a la clave hemos podido acceder al valor
+    println(myMap["César"])
+    println(myMap)
+
+    //Bucles
+
+    //Bucle: for
+    println("\nBucles for")
+    for(value in myList){
+        println(value) //esto nos va a imprimir primero "Dama", "Alfil y por ultimo "Caballo" los 3 elementos separados de la lista
+
+    }
+
+    for(value in mySet){
+        println(value)
+    }
+
+    for(value in myMap){
+        println(value) //println(value.value) esto nos imprime solo los valores que contiene nuestro map
+        //println(value.key) esto nos imprime solo las claves que contiene nuestro map
+        //Según el contexto utilizamos .key o .value
+    }
+
+    //Bucle: while
+
+    var myCounter = 0
+    println("\nBucle while")
+    while (myCounter < myList.count()){
+        println(myList[myCounter])
+        myCounter += 1
+
+    }
+
+
+    //Opcionales
+    //para darle la capacidad de alguna forma de que nuestra propiedad pueda ser null
+    //para que un tipo de dato pueda tomar el valor de tipo de dato o sea nulo, esto simplemente lo hacemos poniendo: ?
+    var myOptional: String? = null //myOptional es una cadena de texto que tambien puede llegar a ser nulo
+    println(myOptional)
+    myOptional= "Mi cadena de texto opcional"
+    println(myOptional)
+
+    //aqui podemos ver que pudimos hacer una variable nula y luego darle el valor a una cadena de texto
+
+    //Funciones\ se ejecuta 3 veces myFunction() según cuantas veces llamemos a la función
+    myFunction()
+    myFunction()
+    myFunction()
+
+    //Clases
+    var myClass = MyClass("Neymar",33)//hay que ingresar los parametros que definimos en nuestra clase MyClass
+
+    //ahora si nos dirigimos a myClass nosotros ya podemos acceder a nuestros dos parametros: nombre o edad
+    println("\nEdad: ${myClass.edad}" )
+    println("\nNombre: ${myClass.nombre}")
+    myClass.imprimir()
+
+
+}
+
+
+fun myFunction(){
+    println("Esto es una función")
 }
 
 
 
+//Clases
+
+class MyClass(val nombre: String, val edad: Int){
+    fun imprimir(){
+        println("Esto es una funcion dentro de la clase MyClass asignada a la variable myClass que imprime")
+    }
+
+
+
+}
+
+    //una clase podria llevar funciones y muchas cosas mas
