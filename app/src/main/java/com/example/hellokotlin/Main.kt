@@ -186,10 +186,69 @@ fun main() {
     var mySet = setOf("Torre","Peón","Rey Blanco","Peón")
     println(mySet) //aca se puede ver que no imprime el elemento final Peón ya que este se repite anteriormente dentro del set
     //basicamente los sets no permiten duplicados
+
+
+    val milista3 = mutableListOf("Guaton",22)
+    println(milista3)
+
+
+
+
+    val listaTareas = mutableListOf("Estudiar Kotlin","Hacer ejercicio","Comprar víveres")
+
+    listaTareas.add("Hacer la cena")
+    listaTareas.add("Lavarse los dientes")
+
+    println(listaTareas)
+
+    listaTareas.remove("Comprar víveres")
+    println(listaTareas)
+
+
+
+    println(listaTareas.size)
+    println(listaTareas.sorted())
+
+    /*
+
+    map: es una función de transformación que toma cada elemento de una colección, le aplica una operación, y devuelve una nueva colección con los resultados.
+
+    1-map --> itera sobre cada elemento de listaTareas
+
+    2- it --> representa cada elemento individual durante la iteración
+
+    3- uppercase() --> convierte cada string a mayúsculas dentro de la lista
+     */
+     val listaMayus = listaTareas.map{ it.uppercase()}
+    println(listaMayus)
+
+    if (listaTareas.size > 5){
+        listaTareas.clear()
+
+
+    }
+
+
+    /*
+        filter: Filtra una colección y devuelve solo los elementos que cumplen con una condición.
+        contains: Verifica si un string contiene otro string específico, aclarar que contains funciona con diferentes tipos de datos segun el contexto
+
+
+        1. ---> filter itera sobre cada elemento de listaTareas
+
+        2. ---> it representa cada string individual
+
+        3. ---> contains("ejercicio") verifica si la palabra "ejercicio" está presente en el string
+    */
+
+    println("Existe 'Hacer ejercicio'? ${listaTareas.contains("Hacer ejercicio")}")
+
+    val tareasEjercicio = listaTareas.filter { it.contains("ejercicio") }
+    println(tareasEjercicio)
+
+
+    //Mapas
 }
 
 
 
-    //Mapas
-
-    val myMap = mutableMapOf()
